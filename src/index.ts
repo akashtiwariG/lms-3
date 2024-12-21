@@ -17,6 +17,8 @@ const axios = require('axios');
 app.use(bodyParser.json());
 
 
+
+
 app.use("/admin", adminRouter)
 app.use("/administrator", administratorRouter)
 app.use("/issue",issueRouter)
