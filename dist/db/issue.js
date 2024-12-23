@@ -17,6 +17,7 @@ const index_1 = __importDefault(require("./index"));
 const router = express_1.default.Router();
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const response = yield index_1.default.issues.findMany({});
+    res.json(response);
 }));
 router.get('/numIssue', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const response = yield index_1.default.issues.count();

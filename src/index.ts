@@ -2,12 +2,10 @@ import express from "express"
 import cors from "cors"
 import bodyParser from "body-parser"
 import prisma from "./db";
+import * as dotenv from 'dotenv'
+dotenv.config()
 const app = express();
-app.use(cors({
-    origin:["https://frontend1-elk2o97p2-tusharsaini-05s-projects.vercel.app/"],
-    methods:["POST","GET","DELETE"],
-    credentials:true
-}));
+app.use(cors());
 
 import adminRouter from "./routes/admin"
 import administratorRouter from "./routes/administrator"
@@ -36,7 +34,6 @@ async function createAdministrator(id:number,email:string,password:string,phonen
 }
 
 const PORT = 4000;
-
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
